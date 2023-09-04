@@ -413,7 +413,7 @@ spawn(function()
     while true do
 if (library.flags.autofarming )  then
 local mob = getClosestMob();
-if (safed == true and mob and mob:FindFirstChild("HumanoidRootPart") and mob.HumanoidRootPart and (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude <= library.flags.attack_range+10) then
+if (safed == true and mob and mob:FindFirstChild("HumanoidRootPart") and mob.HumanoidRootPart and (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude <= library.flags.attack_range+15) then
 safed = false
 fixpos = true
 wait(waitingtime)
@@ -421,7 +421,7 @@ fixpos = false
 repeat
 local mobs = getClosestMob();
 local vu = game:GetService("VirtualUser")
-if (client.Character.HumanoidRootPart.Position - mobs.HumanoidRootPart.Position).Magnitude <= library.flags.attack_range+10 then
+if (client.Character.HumanoidRootPart.Position - mobs.HumanoidRootPart.Position).Magnitude <= library.flags.attack_range+15 then
 vu:ClickButton1(Vector2.new(500,0), game.Workspace.CurrentCamera.CFrame)
 ImprovedTeleport(Vector3.new(mobs.HumanoidRootPart.Position.X,mobs.HumanoidRootPart.Position.Y - library.flags.attack_range , mobs.HumanoidRootPart.Position.Z))
 else
@@ -450,7 +450,7 @@ end
 if fixpos == true then
 ImprovedTeleport(Vector3.new(mobs.HumanoidRootPart.Position.X,mobs.HumanoidRootPart.Position.Y - library.flags.attack_range , mobs.HumanoidRootPart.Position.Z))
 end
-if safed == true and mob and mob:FindFirstChild("HumanoidRootPart") and mob.HumanoidRootPart and (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude > library.flags.attack_range+10 then
+if safed == true and mob and mob:FindFirstChild("HumanoidRootPart") and mob.HumanoidRootPart and (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude > library.flags.attack_range+15 then
 ImprovedTeleport(Vector3.new(mob.HumanoidRootPart.Position.X,mob.HumanoidRootPart.Position.Y - library.flags.attack_range,mob.HumanoidRootPart.Position.Z))
 end;
 end;
